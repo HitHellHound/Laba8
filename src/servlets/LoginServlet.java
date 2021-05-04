@@ -1,5 +1,6 @@
-package entity;
+package servlets;
 
+import entity.ChatUser;
 import servlets.ChatServlet;
 
 import javax.servlet.ServletException;
