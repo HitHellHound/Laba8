@@ -85,7 +85,7 @@ public class LoginServlet extends ChatServlet {
             pw.println("<p><font color='red'>" + errorMessage + "</font></p>");
         }
 
-        pw.println("<form action='/chat/' method='post'>Введите имя: <input type='text' name='name' value=''><input type='submit' value='Войти в чат'>");
+        pw.println("<form action='/chat/login.do' method='post'>Введите имя: <input type='text' name='name' value=''><input type='submit' value='Войти в чат'>");
         pw.println("</form></body></html>");
 
         request.getSession().setAttribute("error", null);
