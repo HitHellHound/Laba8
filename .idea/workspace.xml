@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd197afb-cdc5-4f73-8c2e-1e0d49ed4f82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/LoginServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +161,7 @@
       <workItem from="1620057039217" duration="1187000" />
       <workItem from="1620064278101" duration="605000" />
       <workItem from="1620113598768" duration="1226000" />
-      <workItem from="1620133642707" duration="7535000" />
+      <workItem from="1620133642707" duration="8155000" />
     </task>
     <servers />
   </component>
