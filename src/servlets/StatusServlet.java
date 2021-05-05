@@ -37,7 +37,7 @@ public class StatusServlet extends ChatServlet {
         ChatUser user = activeUsers.get(session.getAttribute("name"));
         long delta = -1;
 
-        if (user != null){
+        if (user != null && user.getSessionId() == session.getId()){
             delta = 1 * 15 * 1000 - (Calendar.getInstance().getTimeInMillis() - user.getLastInteractionTime());
         }
 
@@ -45,7 +45,7 @@ public class StatusServlet extends ChatServlet {
 
         pw.println("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/><meta http-equiv='refresh' content='5'></head>");
         pw.println("<body>");
-        pw.print("<p>ГИГА-ЧАД: <font color='red'>NS");
+        pw.print("<p>ГИГА-ЧАД: <font color='red'>");
         if (delta < 0){
             response.sendRedirect(response.encodeRedirectURL("/chat/SessionTimeoutRedirect.jsp"));
         }
