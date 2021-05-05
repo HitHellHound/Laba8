@@ -18,12 +18,12 @@ public class StatusServlet extends ChatServlet {
 
     public void init() throws ServletException{
         super.init();
-/*
+
         String value = getServletConfig().getInitParameter("SESSION_TIMEOUT");
 
         if (value != null) {
             sessionTimeout = Integer.parseInt(value);
-        }*/
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,18 +35,21 @@ public class StatusServlet extends ChatServlet {
 
         HttpSession session = request.getSession();
         ChatUser user = activeUsers.get(session.getAttribute("name"));
-        long delta = 0;
+        long delta = -1;
 
         if (user != null){
-            delta = 5 * 64 * 1000 - (Calendar.getInstance().getTimeInMillis() - user.getLastInteractionTime());
+            delta = 1 * 15 * 1000 - (Calendar.getInstance().getTimeInMillis() - user.getLastInteractionTime());
         }
 
         PrintWriter pw = response.getWriter();
 
         pw.println("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/><meta http-equiv='refresh' content='5'></head>");
         pw.println("<body>");
-        pw.print("<p>ГИГА-ЧАД: <font color='red'>");
-        if (delta < 60 * 1000){
+        pw.print("<p>ГИГА-ЧАД: <font color='red'>NS");
+        if (delta < 0){
+            response.sendRedirect(response.encodeRedirectURL("/chat/SessionTimeoutRedirect.jsp"));
+        }
+        else if (delta < 60 * 1000){
             pw.print("Время сессии закончится меньше чем через минуту");
         }
         else if (delta < 3 * 60 * 1000){

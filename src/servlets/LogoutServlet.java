@@ -39,7 +39,7 @@ public class LogoutServlet extends ChatServlet {
             }
         }
         else {
-            response.sendRedirect(response.encodeRedirectURL("/chat/view.jsp"));
+            response.sendRedirect(response.encodeRedirectURL("/chat/login.do"));
         }
     }
 }

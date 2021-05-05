@@ -60,6 +60,10 @@
     <servlet>
         <servlet-name>StatusServlet</servlet-name>
         <servlet-class>servlets.StatusServlet</servlet-class>
+        <init-param>
+            <param-name>SESSION_TIMEOUT</param-name>
+            <param-value>3600</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>StatusServlet</servlet-name>

@@ -12,7 +12,7 @@
     <title>Гига-Чад: Письма</title>
 </head>
 <frameset rows="30, *, 60">
-    <frame name="status" src="/status.do">
+    <frame name="status" src="/chat/status.do">
     <frame name="messages" src="/chat/messages.do">
     <frame name="message" src="/chat/compose_message.jsp">
     <noframes>
