@@ -11,7 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Гига-Чад: Письма</title>
 </head>
-<frameset rows="*, 60">
+<frameset rows="30, *, 60">
+    <frame name="status" src="/status.do">
     <frame name="messages" src="/chat/messages.do">
     <frame name="message" src="/chat/compose_message.jsp">
     <noframes>

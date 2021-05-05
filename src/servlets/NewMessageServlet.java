@@ -20,8 +20,9 @@ public class NewMessageServlet extends ChatServlet {
 
         if (message != null && !"".equals(message)){
             ChatUser author = activeUsers.get((String) request.getSession().getAttribute("name"));
+            author.setLastInteractionTime(Calendar.getInstance().getTimeInMillis());
             synchronized (messages){
-                messages.addFirst(new ChatMessage(message, author, Calendar.getInstance().getTimeInMillis()));
+                messages.addFirst(new ChatMessage(message + author.getLastInteractionTime(), author, Calendar.getInstance().getTimeInMillis()));
             }
         }
 
